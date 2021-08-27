@@ -1,0 +1,4 @@
+uint64 successful_tests
+uint64 unsuccessful_tests
+uint64 iteration_limits
+uint64 total_tests
