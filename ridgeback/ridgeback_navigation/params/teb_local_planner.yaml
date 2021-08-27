@@ -1,0 +1,47 @@
+TebLocalPlannerROS:
+
+  # Robot Configuration Parameters
+  acc_lim_x: 0.5
+  acc_lim_theta:  0.5
+
+  max_vel_x: 0.4
+  max_vel_x_backwards: 0.25
+  min_vel_x: 0.1
+
+  wheelbase: 1.538  # 1.538 (including trailer length, otherwise 0.638)
+
+  max_vel_theta: 0.3
+  min_vel_theta: -0.3
+  min_turning_radius: 0.4
+  # cmd_angle_instead_rotvel: false
+
+  allow_init_with_backwards_motion: false
+  global_plan_overwrite_orientation: true
+  global_plan_viapoint_sep: 0.15
+  max_global_plan_lookahead_dist: 4.5
+  inflation_dist: 0.1
+  include_dynamic_obstacles: true
+  legacy_obstacle_association: true
+
+  footprint_model: 
+    type: "polygon"
+    vertices: [[0.48, -0.45], [0.48, 0.45], [-1.505, 0.45], [-1.505, -0.45]]
+
+  # Goal Tolerance Parameters
+  yaw_goal_tolerance: 0.15
+  xy_goal_tolerance: 0.1
+  free_goal_vel: false
+
+  exact_arc_length: false
+
+  weight_kinematics_forward_drive: 600
+  weight_kinematics_turning_radius: 350
+  weight_viapoint: 50
+  weight_optimaltime: 200
+  weight_obstacle: 350
+  weight_inflation: 5
+  weight_shortest_path: 7
+  min_obstacle_dist: 0.25
+  dynamic_obstacle_inflation_dist: 0.33
+
+  map_frame: "/map"

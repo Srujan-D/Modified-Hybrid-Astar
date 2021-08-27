@@ -1,0 +1,15 @@
+<launch>
+  <arg name="scan_topic" default="/scan_multi" />
+
+  <!--- Run gmapping -->
+  <include file="$(find ridgeback_navigation)/launch/include/gmapping.launch">
+    <arg name="scan_topic" value="$(arg scan_topic)" />
+  </include>
+
+  <arg name="config" default="navigation" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ridgeback_viz)/rviz/$(arg config).rviz" />
+
+  <!--- Run Move Base -->
+  <include file="$(find ridgeback_navigation)/launch/include/move_base.launch" />
+
+</launch>
